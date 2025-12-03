@@ -317,3 +317,11 @@ footer {
     font-size: 1.7rem;
   }
 }
+
+table {
+  table-layout: fixed;
+}
+
+table th, table td {
+  word-wrap: break-word;
+}
