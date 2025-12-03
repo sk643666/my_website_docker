@@ -1,4 +1,4 @@
-body {
+/* body {
 font-familut: "Noto Sans KR", sans-serif;
 margin: 0;
 padding: 0;
@@ -33,5 +33,173 @@ padding: 10px;
 position: fixed;
 width: 100%;
 botton: 0;
+} */
+
+/* === 기본 리셋 & 베이스 === */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f4f6fb;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* 공통 컨테이너 */
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* === 헤더 & 네비게이션 === */
+.site-header {
+  background: #004c99;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.main-nav a {
+  color: #dfefff;
+  text-decoration: none;
+  margin-left: 18px;
+  font-size: 0.95rem;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+}
+
+.main-nav a:hover {
+  border-color: rgba(255,255,255,0.8);
+}
+
+.main-nav a.active {
+  border-color: #ffd95a;
+}
+
+/* 모바일 네비게이션 간격 줄이기 */
+@media (max-width: 640px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .main-nav a {
+    margin-left: 0;
+    margin-right: 12px;
+  }
+}
+
+/* === 페이지 타이틀 & 레이아웃 === */
+.page-title {
+  margin: 32px 0 16px;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+/* === 게시판 영역 === */
+.board {
+  margin-top: 32px;
+  margin-bottom: 40px;
+  background: #fff;
+  padding: 24px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+}
+
+.actions {
+  text-align: right;
+  margin-bottom: 16px;
+}
+
+/* 버튼 스타일 */
+.btn {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid #004c99;
+  background: #004c99;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background 0.15s ease, color 0.15s ease, transform 0.05s ease;
+}
+
+.btn:hover {
+  background: #0066cc;
+  transform: translateY(-1px);
+}
+
+/* === 게시판 테이블 === */
+.board-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.board-table thead {
+  background: #f0f6ff;
+}
+
+.board-table th,
+.board-table td {
+  padding: 10px 8px;
+  border-bottom: 1px solid #e1e4ec;
+}
+
+.board-table th {
+  text-align: left;
+  color: #335;
+  font-weight: 600;
+}
+
+.board-table tbody tr:hover {
+  background: #fafcff;
+}
+
+.board-table a {
+  color: #004c99;
+  text-decoration: none;
+}
+
+.board-table a:hover {
+  text-decoration: underline;
+}
+
+/* 작은 화면에서 테이블 글자 조금 줄이기 */
+@media (max-width: 480px) {
+  .board-table th,
+  .board-table td {
+    padding: 8px 4px;
+    font-size: 0.8rem;
+  }
+}
+
+/* === 푸터 === */
+.site-footer {
+  border-top: 1px solid #d9dfe8;
+  padding: 16px 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #667;
+  background: #f8f9fc;
+}
+
 
