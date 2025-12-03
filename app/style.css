@@ -325,3 +325,24 @@ table {
 table th, table td {
   word-wrap: break-word;
 }
+
+.post-header {
+  margin-bottom: 16px;
+}
+
+.post-meta {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 4px;
+}
+
+.post-content {
+  margin-top: 16px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.btn-secondary {
+  background: #fff;
+  color: #004c99;
+}
