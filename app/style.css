@@ -34,3 +34,9 @@ position: fixed;
 width: 100%;
 botton: 0;
 }
+.board { max-width: 900px; margin: 40px auto; }
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 10px; border-bottom: 1px solid #ddd; text-align: left; }
+.actions { text-align: right; margin: 20px 0; }
+.btn { padding: 8px 14px; border: 1px solid #004c99; background:#004c99; color:#fff; text-decoration:none; border-radius:8px; }
+.btn-outline { background:#fff; color:#004c99; }
