@@ -1,26 +1,61 @@
 <!DOCTYPE html>
-<html lan="ko">
+<html lang="ko">
 <head>
-<meta charset="UTF-8">
-<title>홈|My Website</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>홈 | My Website</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="page-home">
 <header>
-<h1>My Simple Homepage</h1>
-<nav>
-<a href="index.html">홈</a>
-<a href="about.html">자기소개</a>
-<a href="projects.html">프로젝트</a>
-<a href="board.php">게시판</a>
-</nav>
+  <div class="header-inner">
+    <div>
+      <h1 class="site-title"><a href="index.html">My Simple Homepage</a></h1>
+      <p class="site-subtitle">공부하면서 차곡차곡 쌓아가는 개인 웹사이트</p>
+    </div>
+    <nav>
+      <div class="nav-links">
+        <a href="index.html" class="active">홈</a>
+        <a href="about.html">자기소개</a>
+        <a href="projects.html">프로젝트</a>
+        <a href="board.php">게시판</a>
+      </div>
+    </nav>
+  </div>
 </header>
+
 <main>
-<h2>환영합니다!</h2>
-<p>이곳은 HTML과 CSS로 만든 간단한 홈페이지입니다.</p>
+  <section class="hero card">
+    <h2 class="hero-title">환영합니다 👋</h2>
+    <p class="hero-text">
+      이곳은 HTML과 CSS, 그리고 PHP 게시판까지 직접 만들어 보는 실습용 홈페이지입니다.
+      상단 메뉴를 눌러 자기소개, 프로젝트, 게시판 페이지를 자유롭게 이동해 보세요.
+    </p>
+    <div class="hero-actions">
+      <a href="about.html" class="btn">자기소개 보러가기</a>
+      <a href="projects.html" class="btn btn-secondary">프로젝트 구경하기</a>
+      <a href="board.php" class="btn btn-secondary">게시판 바로가기</a>
+    </div>
+  </section>
+
+  <section class="home-sections">
+    <article class="card">
+      <h3 class="home-section-title">이 사이트는?</h3>
+      <p>
+        기본적인 HTML 구조와 공통 CSS를 연습하기 위한 작은 포트폴리오 사이트입니다.
+        나중에는 이 구조를 기반으로 더 많은 페이지나 기능을 추가할 수 있어요.
+      </p>
+    </article>
+    <article class="card">
+      <h3 class="home-section-title">배우는 기술</h3>
+      <p>
+        HTML, CSS, 간단한 PHP(게시판), 그리고 배포 환경까지 경험해 볼 수 있습니다.
+      </p>
+    </article>
+  </section>
 </main>
+
 <footer>
-<p>&copy; 2025 My Website</p>
+  <p>&copy; 2025 My Website</p>
 </footer>
 </body>
 </html>
