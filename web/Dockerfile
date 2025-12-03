@@ -7,12 +7,7 @@ RUN docker-php-ext-install pdo_mysql \
     && sed -i 's/80/8000/g' /etc/apache2/ports.conf /etc/apache2/sites-available/000-default.conf
 
 # PHP 설정
-COPY web/php.ini /usr/local/etc/php/conf.d/99-custom.ini
-
-COPY app/ /var/www/html/
+COPY php.ini /usr/local/etc/php/conf.d/99-custom.ini
 
 # 문서 루트
 WORKDIR /var/www/html
-
-# (선택이지만 권장) 컨테이너에서 노출할 포트 명시
-EXPOSE 8000
