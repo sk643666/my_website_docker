@@ -9,7 +9,7 @@
 <header>
   <div class="header-inner">
     <div>
-      <h1 class="site-title"><a href="index.html">My Simple Homepage</a></h1>
+      <h1 class="site-title"><a href="index.html">개인 실습용 홈페이지</a></h1>
       <p class="site-subtitle">새 글을 작성하는 페이지</p>
     </div>
     <nav>
