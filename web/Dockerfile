@@ -9,6 +9,8 @@ RUN docker-php-ext-install pdo_mysql \
 # PHP 설정
 COPY web/php.ini /usr/local/etc/php/conf.d/99-custom.ini
 
+COPY app/ /var/www/html/
+
 # 문서 루트
 WORKDIR /var/www/html
 
