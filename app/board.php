@@ -16,7 +16,7 @@ try {
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>게시판 | My Website</title>
+  <title>게시판 | 개인 실습용 홈페이지</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="page-board">
