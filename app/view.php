@@ -1,52 +1,79 @@
 <?php
 require_once __DIR__ . '/db.php';
+
 $id = (int)($_GET['id'] ?? 0);
-$stmt = $pdo->prepare("SELECT * FROM posts WHERE id = ?");
+
+if ($id <= 0) {
+    exit('잘못된 접근입니다. <a href="board.php">목록</a>');
+}
+
+$stmt = $pdo->prepare("SELECT id, title, name, created_at, content FROM posts WHERE id = ?");
 $stmt->execute([$id]);
-$post = $stmt->fetch();
-if (!$post) { exit('글을 찾을 수 없습니다. <a href="board.php">목록</a>'); }
+$post = $stmt->fetch(PDO::FETCH_ASSOC);
+
+if (!$post) {
+    exit('글을 찾을 수 없습니다. <a href="board.php">목록</a>');
+}
 ?>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<title><?= htmlspecialchars($post['title']) ?> | My Website</title>
-<link rel="stylesheet" href="style.css">
-<style>
-.board { max-width: 900px; margin: 40px auto; }
-.meta { color:#666; margin-bottom:10px; }
-pre { white-space: pre-wrap; word-break: break-word; }
-.actions { margin-top: 16px; }
-.btn { padding: 8px 14px; border:1px solid #004c99; background:#004c99; color:#fff;
-text-decoration:none; border-radius:8px;}
-.btn-outline { background:#fff; color:#004c99; }
-</style>
+  <meta charset="UTF-8">
+  <title><?= htmlspecialchars($post['title'], ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?> | My Website</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="page-board">
 <header>
-<h1>게시글 보기</h1>
-<nav>
-<a href="index.html">홈</a>
-<a href="about.html">자기소개</a>
-<a href="projects.html">프로젝트</a>
-<a href="board.php">게시판</a>
-</nav>
+  <div class="header-inner">
+    <div>
+      <h1 class="site-title"><a href="index.html">My Simple Homepage</a></h1>
+      <p class="site-subtitle">간단한 글을 남길 수 있는 게시판</p>
+    </div>
+    <nav>
+      <div class="nav-links">
+        <a href="index.html">홈</a>
+        <a href="about.html">자기소개</a>
+        <a href="projects.html">프로젝트</a>
+        <a href="board.php" class="active">게시판</a>
+      </div>
+    </nav>
+  </div>
 </header>
-<main class="board">
-<h2><?= htmlspecialchars($post['title']) ?></h2>
-<div class="meta">
-작성자: <?= htmlspecialchars($post['name']) ?> | 작성일: <?=
-htmlspecialchars($post['created_at']) ?>
-</div>
-<pre><?= htmlspecialchars($post['content']) ?></pre>
-<div class="actions">
-<a class="btn btn-outline" href="board.php">목록</a>
-<a class="btn" href="delete.php?id=<?= (int)$post['id'] ?>" onclick="return confirm('삭제하시겠습
-니까?');">삭제</a>
-</div>
+
+<main>
+  <section class="board">
+    <article class="card">
+      <header class="post-header">
+        <h2 class="page-title">
+          <?= htmlspecialchars($post['title'], ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>
+        </h2>
+        <div class="post-meta">
+          작성자:
+          <strong><?= htmlspecialchars($post['name'], ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?></strong>
+          &nbsp;|&nbsp;
+          작성일:
+          <?= htmlspecialchars($post['created_at'], ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>
+        </div>
+      </header>
+
+      <div class="post-content">
+        <?= nl2br(htmlspecialchars($post['content'], ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8')) ?>
+      </div>
+
+      <div class="actions">
+        <a class="btn btn-secondary" href="board.php">목록</a>
+        <a class="btn"
+           href="delete.php?id=<?= (int)$post['id'] ?>"
+           onclick="return confirm('삭제하시겠습니까?');">
+          삭제
+        </a>
+      </div>
+    </article>
+  </section>
 </main>
+
 <footer>
-<p>&copy; 2025 My Website</p>
+  <p>&copy; 2025 My Website</p>
 </footer>
 </body>
 </html>
