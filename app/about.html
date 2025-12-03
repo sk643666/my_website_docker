@@ -1,26 +1,62 @@
 <!DOCTYPE html>
-<html lan="ko">
+<html lang="ko">
 <head>
-<meta charset="UTF-8">
-<title>자기소개|My Website</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>자기소개 | My Website</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="page-about">
 <header>
-<h1>자기소개</h1>
-<nav>
-<a href="index.html">홈</a>
-<a href="about.html">자기소개</a>
-<a href="projects.html">프로젝트</a>
-<a href="board.php">게시판</a>
-</nav>
+  <div class="header-inner">
+    <div>
+      <h1 class="site-title"><a href="index.html">My Simple Homepage</a></h1>
+      <p class="site-subtitle">저를 소개합니다</p>
+    </div>
+    <nav>
+      <div class="nav-links">
+        <a href="index.html">홈</a>
+        <a href="about.html" class="active">자기소개</a>
+        <a href="projects.html">프로젝트</a>
+        <a href="board.php">게시판</a>
+      </div>
+    </nav>
+  </div>
 </header>
+
 <main>
-<h2>안녕하세요!</h2>
-<p>저는 웹 개발과 교육을 좋아하는 사람입니다. HTML, CSS, JS를 활용해 다양한 실습용 페이지를 제작하고 있습니다.</p>
+  <h2 class="page-title">자기소개</h2>
+  <p class="page-description">
+    웹 개발과 교육에 관심이 많고, 실습용 페이지를 직접 만들며 익히는 것을 좋아합니다.
+  </p>
+
+  <section class="profile-layout">
+    <article class="card">
+      <h3>안녕하세요!</h3>
+      <p>
+        저는 웹 개발과 교육을 좋아하는 사람입니다. HTML, CSS, JS를 활용해 다양한 실습용 페이지를
+        제작하고 있고, 간단한 프로젝트들을 통해 조금씩 포트폴리오를 채워 나가고 있습니다.
+      </p>
+      <ul class="profile-meta">
+        <li>• 관심 분야: 웹 프론트엔드, 백엔드 기초, 교육용 콘텐츠</li>
+        <li>• 학습 방식: 직접 만들어 보면서 이해하기</li>
+      </ul>
+    </article>
+
+    <aside class="card">
+      <h3>기술 스택</h3>
+      <div class="skill-tags">
+        <span class="tag">HTML</span>
+        <span class="tag">CSS</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">PHP 기초</span>
+        <span class="tag">Git &amp; GitHub</span>
+      </div>
+    </aside>
+  </section>
 </main>
+
 <footer>
-<p>&copy; 2025 My Website</p>
+  <p>&copy; 2025 My Website</p>
 </footer>
 </body>
 </html>
